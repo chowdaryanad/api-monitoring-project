@@ -16,7 +16,6 @@ This project monitors a FastAPI app using Prometheus and Grafana, and sends aler
 
 ## 📁 Folder Structure
 
-
 ├── docker-compose.yml
 ├── prometheus.yml
 ├── alert_rules.yml
@@ -24,4 +23,3 @@ This project monitors a FastAPI app using Prometheus and Grafana, and sends aler
 ├── test_2.py
 ├── requirements.txt
 └── README.md
-
