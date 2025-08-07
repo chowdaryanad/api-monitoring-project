@@ -1,0 +1,20 @@
+groups:
+  - name: fastapi-alerts
+    rules:
+      - alert: API_Down
+        expr: up == 0
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "API is down"
+          description: "The FastAPI app is not responding."
+
+      - alert: High_Response_Time
+        expr: rate(http_request_duration_seconds_sum[1m]) / rate(http_request_duration_seconds_count[1m]) > 1
+        for: 15s
+        labels:
+          severity: warning
+        annotations:
+          summary: "High Response Time"
+          description: "API response time is higher than 1 second (avg in last 1 min)."
